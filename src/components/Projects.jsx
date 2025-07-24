@@ -12,7 +12,7 @@ const Projects = () => {
         "Application tracking",
         "Admin dashboard"
       ],
-      image: "/public/tpcell.png", // Make sure this path is correct
+      image: "./public/tpcell.png", // Make sure this path is correct
       githubLink: "https://github.com/mansi2076/TPCellWebsite",
       demoLink: "https://placement-demo.example.com"
     },
@@ -26,7 +26,7 @@ const Projects = () => {
         "Personalized meal plans",
         "Fitness calculator"
       ],
-      image: "/public/fitness.webp", // Make sure this path is correct
+      image: "./public/fitness.webp", // Make sure this path is correct
       githubLink: "https://github.com/mansi2076/fitness_website",
       demoLink: "https://fitness-demo.example.com"
     },
@@ -39,7 +39,7 @@ const Projects = () => {
     "Zone-wise vehicle management",
     "Missed pickup alerts"
   ],
-  image: "/public/rsgc.png", // Replace with actual RSGC project image path
+  image: "./public/rsgc.png", // Replace with actual RSGC project image path
   githubLink: "https://github.com/lokendramahale/RSGC",
   demoLink: "https://ecommerce-demo.example.com" // Replace with actual deployed link
 }
