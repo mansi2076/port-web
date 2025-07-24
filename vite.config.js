@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(),tailwindcss()],
-  base: '/Portfolio/', // Should NOT include @emotion/babel-plugin
+  // Should NOT include @emotion/babel-plugin
 });
 
 // import { defineConfig } from 'vite';
