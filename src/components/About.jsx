@@ -313,7 +313,7 @@ const About = () => {
                     degree: "Master's of Computer Applications", 
                     school: "Maulana Azad National Institute of Technology , Bhopal", 
                     period: "2023 - Present", 
-                    cgpa: "CGPA: 8.07",
+                    cgpa: "CGPA: 8.09",
                     icon: "🏛️"
                   },
                   { 

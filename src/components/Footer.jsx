@@ -3,10 +3,11 @@ import { HiOutlineMail } from 'react-icons/hi';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <FaGithub size={20} />, url: 'https://github.com/mansi2076' },
-    { icon: <FaLinkedin size={20} />, url: 'https://www.linkedin.com/in/mansi-birla-209075289' },
-    { icon: <HiOutlineMail size={20} />, url: 'mailto:mansibirla0307@gmail.com' },
-  ];
+  { icon: <FaGithub size={20} />, url: 'https://github.com/mansi2076', label: 'GitHub' },
+  { icon: <FaLinkedin size={20} />, url: 'https://www.linkedin.com/in/mansi-birla-209075289', label: 'LinkedIn' },
+  { icon: <HiOutlineMail size={20} />, url: 'mailto:mansibirla0307@gmail.com', label: 'Email' },
+];
+
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
@@ -46,7 +47,7 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.url}
-                target="_blank"
+              
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors duration-300"
                 aria-label={`${link.icon.type.name} link`}

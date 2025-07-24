@@ -27,23 +27,24 @@ const Projects = () => {
         "Fitness calculator"
       ],
       image: "/public/fitness.webp", // Make sure this path is correct
-      githubLink: "https://github.com/yourusername/fitness-hub",
+      githubLink: "https://github.com/mansi2076/fitness_website",
       demoLink: "https://fitness-demo.example.com"
     },
     {
-      title: "E-Commerce Dashboard",
-      description: "Modern admin dashboard for e-commerce businesses with analytics, inventory management, and customer insights.",
-      tech: ["React", "Material UI", "Chart.js", "Firebase"],
-      features: [
-        "Sales analytics visualization",
-        "Product inventory management",
-        "Customer behavior tracking",
-        "Order processing system"
-      ],
-      image: "/public/shopping.jpeg", // Make sure this path is correct
-      githubLink: "https://github.com/yourusername/ecommerce-dashboard",
-      demoLink: "https://ecommerce-demo.example.com"
-    }
+  title: "Remote Surveillance of Garbage Collection (RSGC)",
+  description: "Smart waste management dashboard for tracking garbage collection vehicles and zones in real-time.",
+  tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL", "Supabase"],
+  features: [
+    "Live vehicle and bin monitoring",
+    "Zone-wise vehicle management",
+    "Missed pickup alerts"
+  ],
+  image: "/public/rsgc.png", // Replace with actual RSGC project image path
+  githubLink: "https://github.com/lokendramahale/RSGC",
+  demoLink: "https://ecommerce-demo.example.com" // Replace with actual deployed link
+}
+
+    
   ];
 
   return (

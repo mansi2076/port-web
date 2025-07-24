@@ -1,5 +1,3 @@
-import { ref, set, onValue, push } from "firebase/database";
-import { db } from "./firebase";
 import { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,7 +12,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true' || true;
   });
-  const [visitorCount, setVisitorCount] = useState(0);
+
   const [isLoading, setIsLoading] = useState(false);
   const [submitError, setSubmitError] = useState(null);
 
@@ -22,28 +20,6 @@ function App() {
     localStorage.setItem('darkMode', darkMode);
     document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
-
-  useEffect(() => {
-    const countRef = ref(db, 'visitors/count');
-    const updateCount = async () => {
-      try {
-        onValue(countRef, (snapshot) => {
-          const currentCount = snapshot.val() || 0;
-          const newCount = currentCount + 1;
-
-          set(countRef, newCount)
-            .then(() => setVisitorCount(newCount))
-            .catch((error) => {
-              console.error("Error updating count:", error);
-              setVisitorCount(currentCount);
-            });
-        }, { onlyOnce: true });
-      } catch (error) {
-        console.error("Visitor count error:", error);
-      }
-    };
-    updateCount();
-  }, []);
 
   const handleContactSubmit = useCallback(async (messageData) => {
     if (!messageData?.name || !messageData?.message) {
@@ -55,24 +31,8 @@ function App() {
     setSubmitError(null);
 
     try {
-      const messagesRef = ref(db, 'messages');
-      const newMessageRef = push(messagesRef);
-      await set(newMessageRef, {
-        name: String(messageData.name).trim(),
-        email: String(messageData.email).trim() || 'No Email',
-        message: String(messageData.message).trim(),
-        timestamp: new Date().toISOString(),
-        read: false
-      });
-
-      const visitorLogRef = ref(db, 'visitors/logs');
-      await push(visitorLogRef, {
-        name: messageData.name,
-        email: messageData.email || 'No Email',
-        messageTime: new Date().toISOString()
-      });
-
-      console.log("Message sent and visitor logged.");
+      // Firebase removed: Simulate success
+      console.log("Message received:", messageData);
       return true;
     } catch (error) {
       console.error("Submission error:", error.message);
@@ -104,9 +64,6 @@ function App() {
           <section id="contact" className="pt-32">
             <Contact onSubmit={handleContactSubmit} isLoading={isLoading} error={submitError} />
           </section>
-          <div className="text-center text-sm mt-4">
-            {visitorCount > 0 ? `Visitors: ${visitorCount}` : 'Loading visitor count...'}
-          </div>
         </main>
         <Footer />
       </div>

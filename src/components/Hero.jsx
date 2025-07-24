@@ -133,7 +133,7 @@ const Hero = () => {
               className="w-full h-full bg-white rounded-lg overflow-hidden shadow-xl"
             >
               <iframe
-                src="/public/Mansi_Resume.pdf"
+                src="/public/Mansi_Birla.Resume.pdf"
                 className="w-full h-full border-none"
                 title="Mansi Birla's Resume"
                 loading="eager"
