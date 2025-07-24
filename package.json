@@ -23,7 +23,7 @@
 
     
 
-  "build": "vite build --base=/",
+  "build": "vite build ",
   
 
     
